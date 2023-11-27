@@ -21,13 +21,14 @@ Route::get('/', function () {
   //  'index','show','store','update','destroy'
 //]);
 
-Route::get('Products',[ProductController::class,'index'])->name("products.index");
-Route::get('Products/{Product}',[ProductController::class,'show'])->name("products.show");
-Route::get('Products/create',[ProductController::class,'create'])->name("products.create");
-Route::post('Products',[ProductController::class,'store'])->name("products.store");
-Route::get('Products/{Product}/edit',[ProductController::class,'edit'])->name("products.edit");
-Route::patch('Products/{Product}',[ProductController::class,'update'])->name("products.update");
-Route::delete('Products/{Product}',[ProductController::class,'destroy'])->name("products.destroy");
+Route::get('/', [ProductController::class, 'index'])->name("product.index");
+Route::get('Products', [ProductController::class, 'index'])->name("products.index");
+Route::get('Products/create', [ProductController::class, 'create'])->name("products.create");
+Route::post('Products', [ProductController::class, 'store'])->name("products.store");
+Route::get('Products/{product}/edit', [ProductController::class, 'edit'])->name("products.edit");
+Route::patch('Products/{product}', [ProductController::class, 'update'])->name("products.update");
+Route::delete('Products/{product}', [ProductController::class, 'destroy'])->name("products.destroy");
+
 /*
 Products.index
 URL: /Products
