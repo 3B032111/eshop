@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Cart Items') }}
+            {{ __('CartItems') }}
         </h2>
     </x-slot>
 
@@ -22,13 +22,13 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($cartItems as $cartItem)
+                                @foreach($cart_items as $cart_item)
                                     <tr>
-                                        <td class="relative py-4 pr-3 text-sm font-medium text-gray-900">{{ $cartItem->id }}</td>
-                                        <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">{{ $cartItem->user_id }}</td>
-                                        <td class="hidden px-3 py-4 text-sm text-gray-500 md:table-cell">{{ $cartItem->product_at }}</td>
-                                        <td class="px-3 py-4 text-sm text-gray-500">{{ $cartItem->created_at }}</td>
-                                        <td class="px-3 py-4 text-sm text-gray-500">{{ $cartItem->updated_at }}</td>
+                                        <td class="relative py-4 pr-3 text-sm font-medium text-gray-900">{{ $cart_item->id }}</td>
+                                        <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">{{ $cart_item->user_id }}</td>
+                                        <td class="hidden px-3 py-4 text-sm text-gray-500 md:table-cell">{{ $cart_item->product_id }}</td>
+                                        <td class="px-3 py-4 text-sm text-gray-500">{{ $cart_item->created_at }}</td>
+                                        <td class="px-3 py-4 text-sm text-gray-500">{{ $cart_item->updated_at }}</td>
                                     </tr>
                                 @endforeach
                                 <!-- More people... -->
