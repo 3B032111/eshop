@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartItemController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,6 +53,10 @@ Route::post('CartItems', [CartItemController::class, 'store'])->name("cartItem.s
 Route::get('CartItems/{product}/edit', [CartItemController::class, 'edit'])->name("cartItem.edit");
 Route::patch('CartItems/{product}', [CartItemController::class, 'update'])->name("cartItem.update");
 Route::delete('CartItems/{product}', [CartItemController::class, 'destroy'])->name("cartItem.destroy");
+
+//Order
+Route::get('Orders', [OrderController::class, 'index'])->name("orders.index");
+Route::get('Orders/{Product}', [OrderController::class, 'show'])->name("orders.show");
 /*
 Products.index
 URL: /Products
