@@ -4,16 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
 class OrderItem extends Model
 {
     use HasFactory;
-    public function product()
+
+    public function orders()
     {
-        return $this->belongsTo(Product::class);
+        return $this -> belongsTo(Order::class);
     }
-    public function order()
+
+    public function products()
     {
-        return $this->belongsTo(Order::class);
+        return $this -> belongsTo(Product::class);
     }
 }
