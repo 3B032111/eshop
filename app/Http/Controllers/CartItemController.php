@@ -14,9 +14,11 @@ class CartItemController extends Controller
      */
     public function index()
     {
-        return view('cart_items.index', [
-            'cart_items' => CartItem::where('user_id', auth()->user()->id)->get()
-        ]);
+        $cartItems = auth()->user()->cartItems;
+        $data = [
+            'cart_items'=>$cartItems,
+        ];
+        return view('cart_items.index', $data);
     }
 
     /**
