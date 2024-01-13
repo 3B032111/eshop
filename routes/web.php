@@ -58,6 +58,8 @@ Route::delete('CartItems/{cartItem}', [CartItemController::class, 'destroy'])->n
 Route::get('Orders', [OrderController::class, 'index'])->name("orders.index");
 Route::get('Orders/{order}', [OrderController::class, 'show'])->name("orders.show");
 
+
+
 /*
 Products.index
 URL: /Products
